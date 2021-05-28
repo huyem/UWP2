@@ -21,8 +21,9 @@
                 <TextBox x:Name="input3" Text="Nội dung thư" RelativePanel.Below="input2" 
                          RelativePanel.AlignHorizontalCenterWithPanel="False" Margin="0,10,0,0" Width="400" Height="300"/>
                 <Button Content="Gửi" Click="Button_Click"  RelativePanel.Below="input3"/>
-                <ListView x:Name="ListUsers" Loaded="Button_Click"
-                          RelativePanel.AlignRightWithPanel="True" Margin="0,50,0,0"  Width="200" Height="300">
+                <ListView x:Name="ListUsers" 
+                          RelativePanel.AlignRightWithPanel="True"
+                          Margin="0,50,0,0"  Width="200" Height="300">
                     <ListView.Header >
                         <TextBlock  TextAlignment="Left" Text="Danh sách người dùng"/>
                     </ListView.Header>
