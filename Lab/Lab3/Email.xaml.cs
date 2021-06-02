@@ -27,10 +27,15 @@ namespace UWP2.Lab.Lab3
             this.InitializeComponent();
         }
 
-        private void bt1_Click(object sender, RoutedEventArgs e)
+        protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            Lab3class lab3Class = new Lab3class("", "", input2.Text);
-            ListMail.Items.Add(lab3Class);
+            List<Lab3class> newCustomer = new List<Lab3class>();
+            base.OnNavigatedTo(e);
+            var param = (Lab3class)e.Parameter;
+            newCustomer.Add(param);
+            listEmail.ItemsSource = newCustomer;
+
+            this.NavigationCacheMode = Windows.UI.Xaml.Navigation.NavigationCacheMode.Enabled;
         }
     }
 }

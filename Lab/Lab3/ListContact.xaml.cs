@@ -13,7 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using UWP2.Models;
-using UWP2.Lab;
+
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace UWP2.Lab.Lab3
@@ -21,25 +21,28 @@ namespace UWP2.Lab.Lab3
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class Contact : Page
+    public sealed partial class ListContact : Page
     {
-        public Contact()
+        List<Lab3class> newContact = new List<Lab3class>();
+        public ListContact()
         {
             this.InitializeComponent();
         }
-
- 
-        private void ListContact_Loaded(object sender, RoutedEventArgs e)
+        protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            Lab3class lab3Class = new Lab3class(input1.Text, "", "" );
-            ListContact.Items.Add(lab3Class);
 
+            
+
+            var param = (Lab3class)e.Parameter;
+            newContact.Add(param);
+            listContact.ItemsSource = newContact;
+     
         }
 
-        
-        private void Button_Tapped_1(object sender, TappedRoutedEventArgs e)
+        private void listContact_Loaded(object sender, RoutedEventArgs e)
         {
-            backpage.Navigate(typeof(Lab.Lab3.Home));
+            
+            
         }
     }
 }

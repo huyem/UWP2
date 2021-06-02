@@ -24,9 +24,19 @@
             </ListView>
             
         </SplitView.Pane>
-        <SplitView.Content>
-            <ScrollViewer Margin="10">
-                <Frame x:Name="MainContent"/>
+
+        <SplitView.Content >
+            
+            <ScrollViewer Margin="10" x:Name="lt">
+                <RelativePanel>
+                    <Button x:Name="bt1" Content="Add Contact"  Click="bt1_Click" Margin="10" />
+                    <Button x:Name="bt2" Content="Add Customer"  Click="bt2_Click"  RelativePanel.RightOf="bt1" Margin="10" />
+                    <Button x:Name="bt3" Content="Add Enmail"  Click="bt3_Click"  RelativePanel.RightOf="bt2" Margin="10" />
+                    <Button Content="Back"  Margin="10" Click="Button_Click"  RelativePanel.RightOf="bt3"/>
+
+                    <Frame x:Name="MainContent" RelativePanel.Below="bt1"/>
+                </RelativePanel>
+               
             </ScrollViewer>
         </SplitView.Content>
         

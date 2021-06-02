@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using UWP2.Models;
+
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace UWP2.Lab.Lab3
@@ -20,21 +21,21 @@ namespace UWP2.Lab.Lab3
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class Customer : Page
+    public sealed partial class FormAddEmail : Page
     {
-        public Customer()
+        public FormAddEmail()
         {
             this.InitializeComponent();
         }
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
-            List<Lab3class> newCustomer = new List<Lab3class>();
-            base.OnNavigatedTo(e);
-            var param = (Lab3class)e.Parameter;
-            newCustomer.Add(param);
-            listCustomer.ItemsSource = newCustomer;
-            this.NavigationCacheMode = Windows.UI.Xaml.Navigation.NavigationCacheMode.Enabled;
-        }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            string Email = input4.Text;
+
+            Lab3class lab3Class = new Lab3class("", "",Email);
+
+
+            this.Frame.Navigate(typeof(Email), lab3Class);
+        }
     }
 }

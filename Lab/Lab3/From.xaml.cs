@@ -27,6 +27,19 @@ namespace UWP2.Lab.Lab3
         {
             this.InitializeComponent();
         }
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            
+        }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            string Contact = input1.Text;
+            
+            Lab3class lab3Class = new Lab3class(Contact, "", "");
+            
+          
+            this.Frame.Navigate(typeof(ListContact), lab3Class);
+        }
     }
 }

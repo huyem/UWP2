@@ -20,21 +20,21 @@ namespace UWP2.Lab.Lab3
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class Customer : Page
+    public sealed partial class FormaddCustomer : Page
     {
-        public Customer()
+        public FormaddCustomer()
         {
             this.InitializeComponent();
         }
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
-            List<Lab3class> newCustomer = new List<Lab3class>();
-            base.OnNavigatedTo(e);
-            var param = (Lab3class)e.Parameter;
-            newCustomer.Add(param);
-            listCustomer.ItemsSource = newCustomer;
-            this.NavigationCacheMode = Windows.UI.Xaml.Navigation.NavigationCacheMode.Enabled;
-        }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            string Custumer = input3.Text;
+
+            Lab3class lab3Class = new Lab3class( "", Custumer, "");
+
+
+            this.Frame.Navigate(typeof(Customer), lab3Class);
+        }
     }
 }

@@ -45,8 +45,9 @@ namespace UWP2.Lab.Lab3
                     MainContent.Navigate(typeof(Lab.Lab3.Home));
                     break;
                 case "Contact":
-                    MainContent.Navigate(typeof(Lab.Lab3.Contact));
+                    MainContent.Navigate(typeof(Lab.Lab3.ListContact));
 
+                     
                     break;
                 case "Customer":
                     MainContent.Navigate(typeof(Lab.Lab3.Customer));
@@ -57,6 +58,31 @@ namespace UWP2.Lab.Lab3
 
                     break;
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (MainContent.CanGoBack)
+            {
+                MainContent.GoBack();
+            }
+
+        }
+
+        private void bt1_Click(object sender, RoutedEventArgs e)
+        {
+            MainContent.Navigate(typeof(From));
+        }
+
+        private void bt2_Click(object sender, RoutedEventArgs e)
+        {
+            MainContent.Navigate(typeof(FormaddCustomer));
+        }
+
+        private void bt3_Click(object sender, RoutedEventArgs e)
+        {
+            MainContent.Navigate(typeof(FormAddEmail));
         }
     }
 }
